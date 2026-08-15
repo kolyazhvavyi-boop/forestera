@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FORESTERRA — Преміальні штучні ялинки</title>
+<style>
+:root{
+  --bg:#080203; --panel:#210709; --panel2:#2b0a0d; --line:#5b2524;
+  --gold:#c9a15b; --gold2:#e0c27d; --text:#f2e8d7; --muted:#b8a99b;
+  --green:#183b25; --cream:#f4ecdf;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 50% 0,#1c0609 0,#080203 48%,#050102 100%);color:var(--text);font-family:Arial,Helvetica,sans-serif}
+a{text-decoration:none;color:inherit} button,input,select,textarea{font:inherit}
+.header{height:82px;border-bottom:1px solid #301014;background:#080203;display:flex;align-items:center;padding:0 5.8%;gap:45px;position:sticky;top:0;z-index:50}
+.brand{display:flex;align-items:center;gap:13px;min-width:260px}.brand-mark{font-size:34px;color:var(--gold);line-height:1}
+.brand-name{font-family:Georgia,serif;font-size:22px;letter-spacing:2px}.brand-sub{font-size:9px;color:#a9957d;letter-spacing:1.7px;margin-top:3px}
+.nav{display:flex;gap:34px;align-items:center;flex:1;justify-content:center}.nav a{font-size:13px;color:#d0c4b8;letter-spacing:.2px}.nav a:hover{color:var(--gold2)}
+.actions{display:flex;align-items:center;gap:20px}.phone{font-size:13px;color:#d8c7b3}.icon{font-size:26px;color:var(--gold);cursor:pointer}.cart{position:relative}.count{position:absolute;right:-9px;top:-8px;background:var(--gold);color:#170708;border-radius:50%;width:18px;height:18px;text-align:center;font-size:11px;line-height:18px;font-weight:bold}
+.wrap{width:min(1130px,calc(100% - 48px));margin:auto}
+.mega{margin-top:0;background:linear-gradient(180deg,#26090c,#1c0608);border:1px solid #542124;border-radius:0 0 6px 6px;padding:25px;display:grid;grid-template-columns:1.2fr 1.2fr 1.65fr;gap:26px;box-shadow:0 15px 45px #0009}
+.catgrid{display:grid;grid-template-columns:1fr 1fr;gap:25px 28px;border-right:1px solid #492023;padding-right:25px}
+.cat{display:flex;gap:15px;align-items:center}.cat-ico{width:52px;text-align:center;font-size:34px}.cat h3{font-size:15px;font-weight:400;margin:0 0 6px}.cat p{font-size:12px;color:#b9a9a0;margin:0;line-height:1.45}
+.hero{height:368px;border-radius:5px;overflow:hidden;position:relative;background:#140607}
+.hero img{width:100%;height:100%;object-fit:cover;filter:saturate(.9)}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,2,2,.8),rgba(10,2,2,.12) 60%,rgba(10,2,2,.05))}
+.hero-copy{position:absolute;z-index:2;left:24px;top:52px;width:210px}.hero-copy h1{font:26px Georgia,serif;line-height:1.3;margin:0 0 13px;color:#f1dfbd}.hero-copy p{font-size:12px;line-height:1.55;color:#eee1d2}.gold-btn{display:inline-block;border:1px solid #806033;background:#290a0d;color:#d9bc7f;padding:12px 17px;border-radius:4px;font-size:11px;text-transform:uppercase;margin-top:25px}
+.section-head{display:flex;justify-content:space-between;align-items:center;margin:28px 0 15px}.section-head h2{font:24px Georgia,serif;color:#e5c98f;letter-spacing:1px;margin:0}.small-btn{border:1px solid #482023;color:#bda37a;padding:11px 18px;font-size:11px;border-radius:4px;background:#160507}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;padding-bottom:35px}.product{background:linear-gradient(180deg,#1b0608,#170507);border:1px solid #472023;border-radius:5px;overflow:hidden;position:relative;min-width:0}.pic{height:235px;background:#160708;overflow:hidden}.pic img{width:100%;height:100%;object-fit:cover}.badge{position:absolute;left:0;top:0;background:#21070a;border-right:1px solid #6b352d;border-bottom:1px solid #6b352d;color:#d4b477;padding:8px 10px;font-size:10px}.heart{position:absolute;right:12px;top:10px;color:#d1b47c;font-size:20px}.info{padding:13px 14px 14px}.info h3{font:16px Georgia,serif;margin:0 0 17px;color:#f0e5d8}.spec{font-size:11px;color:#9f9188;margin:7px 0}.spec b{color:#eee4da;font-size:13px;font-weight:400}.price{font-size:16px;color:#fff;margin:11px 0}.details{border:1px solid #6c392e;background:#2b0b0d;color:#d2b16d;padding:9px 12px;font-size:10px;border-radius:4px;text-transform:uppercase;cursor:pointer;width:100%}
+.dots{text-align:center;padding:0 0 28px;color:#a88954}.dots span{display:inline-block;width:7px;height:7px;border-radius:50%;background:#5e4942;margin:0 5px}.dots .on{background:#d5b46d}
+.about{background:#f2eadf;color:#24180f;padding:65px 0}.about h2{font:30px Georgia,serif;color:#17331f;margin:0 0 15px}.about p{color:#68584c;line-height:1.7;max-width:700px}.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:45px}.feature{background:#fff;border:1px solid #e1d4c3;border-radius:8px;padding:22px}.feature h3{color:#17331f;margin:0 0 8px}.feature p{margin:0}
+.order{padding:65px 0;background:#0b0304}.order h2{font:30px Georgia,serif;color:#e5c98f;margin:0 0 25px}.form{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:11px;color:#b9a99e}.field input,.field select,.field textarea{background:#170507;border:1px solid #4b2022;color:#eee;padding:13px;border-radius:4px;outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:#9c7541}.submit{background:#6d491d;border:1px solid #c49c58;color:#f5e6c8;padding:14px 22px;border-radius:4px;cursor:pointer;font-size:12px;text-transform:uppercase;grid-column:1/-1}
+.footer{border-top:1px solid #321316;padding:35px 0;color:#968b83;font-size:11px}.footer .wrap{display:flex;justify-content:space-between;gap:20px}
+.modal{position:fixed;inset:0;background:#000b;display:none;align-items:center;justify-content:center;z-index:100}.modal.show{display:flex}.modalbox{width:min(560px,92vw);background:#1b0608;border:1px solid #70402b;padding:25px;border-radius:7px;box-shadow:0 20px 70px #000}.modalbox h3{font:23px Georgia,serif;color:#e3c98c;margin:0 0 18px}.close{float:right;background:none;border:0;color:#c9a15b;font-size:24px;cursor:pointer}
+@media(max-width:900px){.header{padding:0 20px;gap:12px}.nav{gap:14px}.phone{display:none}.brand{min-width:auto}.mega{grid-template-columns:1fr}.catgrid{border-right:0;padding-right:0}.products{grid-template-columns:repeat(2,1fr)}.about .wrap{grid-template-columns:1fr}.hero{height:330px}}
+@media(max-width:600px){.header{height:68px}.brand-name{font-size:17px}.brand-mark{font-size:26px}.nav{display:none}.wrap{width:calc(100% - 24px)}.mega{padding:14px}.catgrid{gap:18px 12px}.cat p{display:none}.cat h3{font-size:12px}.cat-ico{width:38px;font-size:26px}.products{grid-template-columns:1fr 1fr;gap:8px}.pic{height:165px}.info{padding:9px}.info h3{font-size:13px}.form{grid-template-columns:1fr}.field.full{grid-column:auto}.submit{grid-column:auto}.footer .wrap{flex-direction:column}}
+</style>
+</head>
+<body>
+<header class="header">
+  <a class="brand" href="#"><div class="brand-mark">♧</div><div><div class="brand-name">FORESTERRA</div><div class="brand-sub">ПРЕМІУМ ЯЛИНКИ</div></div></a>
+  <nav class="nav"><a href="catalog.html">КАТАЛОГ</a><a href="#about">ПРО НАС</a><a href="#delivery">ДОСТАВКА І ОПЛАТА</a><a href="#reviews">ВІДГУКИ</a><a href="#contacts">КОНТАКТИ</a></nav>
+  <div class="actions"><span class="phone">+38 (099) 123 45 67</span><span class="icon">♡</span><span class="icon">♙</span><span class="icon cart" onclick="openCart()">🛒<span class="count" id="count">0</span></span></div>
+</header>
+
+<main>
+<section id="catalog" class="wrap">
+  <div class="mega">
+    <div class="catgrid">
+      <a class="cat" href="catalog.html?cat=yalynky"><div class="cat-ico">🌲</div><div><h3>Штучні ялинки</h3><p>Великий вибір<br>штучних ялинок</p></div></a>
+      <a class="cat" href="catalog.html?cat=hirlyandy"><div class="cat-ico">🌿</div><div><h3>Гірлянди</h3><p>Хвойні гірлянди<br>для інтер'єру та екстер'єру</p></div></a>
+      <a class="cat" href="catalog.html?cat=v-horshchyku"><div class="cat-ico">🌲</div><div><h3>Штучні ялинки в горщику</h3><p>Ялинки в горщиках<br>для дому та офісу</p></div></a>
+      <a class="cat" href="catalog.html?cat=pidvisni"><div class="cat-ico">🎄</div><div><h3>Підвісні ялинки</h3><p>Оригінальні підвісні<br>рішення</p></div></a>
+      <a class="cat" href="catalog.html?cat=vinochky"><div class="cat-ico">💮</div><div><h3>Віночки</h3><p>Новорічні віночки<br>на двері та стіл</p></div></a>
+      <a class="cat" href="catalog.html?cat=nastinni"><div class="cat-ico">🌲</div><div><h3>Настінні ялинки</h3><p>Стильні рішення<br>для стін</p></div></a>
+      <a class="cat" href="catalog.html?cat=ikebany"><div class="cat-ico">🌾</div><div><h3>Ікебани</h3><p>Хвойні композиції<br>для декору</p></div></a>
+      <a class="cat" href="catalog.html?cat=mini"><div class="cat-ico">🌲</div><div><h3>Міні-ялинки</h3><p>Компактні ялинки<br>для будь-якого простору</p></div></a>
+    </div>
+    <div class="hero"><img src="assets/hero.jpg" alt="Новорічний інтер'єр"><div class="hero-copy"><h1>ПРЕМІУМ ЯКІСТЬ<br>ДЛЯ ВАШОГО<br>СВЯТА</h1><p>Обирайте найкращі ялинки та декор для незабутньої атмосфери</p><a class="gold-btn" href="catalog.html">ПЕРЕГЛЯНУТИ КАТАЛОГ</a></div></div>
+  </div>
+</section>
+
+<section id="popular" class="wrap">
+  <div class="section-head"><h2>ПОПУЛЯРНІ ЯЛИНКИ</h2><a class="small-btn" href="catalog.html">ПЕРЕГЛЯНУТИ КАТАЛОГ →</a></div>
+  <div class="products">
+    <article class="product"><div class="pic"><img src="assets/products/ukrainska.jpg" alt="Українська"><span class="badge">ХІТ ПРОДАЖІВ</span><span class="heart">♡</span></div><div class="info"><h3>Українська</h3><div class="spec">♙ Висота<br><b>1.5 – 4.0 м</b></div><div class="spec">♙ Від<br><b>4 800 ₴</b></div><button class="details" onclick="add('Українська',4800)">ДЕТАЛЬНІШЕ</button></div></article>
+    <article class="product"><div class="pic"><img src="assets/products/lameliya.jpg" alt="Ламелія"><span class="heart">♡</span></div><div class="info"><h3>Ламелія</h3><div class="spec">♙ Висота<br><b>1.5 – 2.4 м</b></div><div class="spec">♙ Від<br><b>8 400 ₴</b></div><button class="details" onclick="add('Ламелія',8400)">ДЕТАЛЬНІШЕ</button></div></article>
+    <article class="product"><div class="pic"><img src="assets/products/ledi-vait.jpg" alt="Леді Вайт"><span class="heart">♡</span></div><div class="info"><h3>Леді Вайт</h3><div class="spec">♙ Висота<br><b>1.5 – 3.5 м</b></div><div class="spec">♙ Від<br><b>5 500 ₴</b></div><button class="details" onclick="add('Леді Вайт',5500)">ДЕТАЛЬНІШЕ</button></div></article>
+    <article class="product"><div class="pic"><img src="assets/products/belisima.jpg" alt="Белісіма"><span class="heart">♡</span></div><div class="info"><h3>Белісіма</h3><div class="spec">♙ Висота<br><b>1.5 – 2.7 м</b></div><div class="spec">♙ Від<br><b>7 800 ₴</b></div><button class="details" onclick="add('Белісіма',7800)">ДЕТАЛЬНІШЕ</button></div></article>
+  </div><div class="dots"><span class="on"></span><span></span><span></span><span></span></div>
+</section>
+
+<section id="about" class="about"><div class="wrap"><div><h2>FORESTERRA — преміальні штучні ялинки</h2><p>Створюємо атмосферу свята. Кожна ялинка — це не просто декор, а частина сімейних традицій. Природна форма, детально опрацьовані гілочки та сучасна Umbrella System.</p></div><div class="feature"><h3>Природна краса у кожній деталі</h3><p>Безпечні матеріали, міцний каркас та продумана конструкція для довгого використання.</p></div></div></section>
+
+<section id="delivery" class="order"><div class="wrap"><h2>ОФОРМЛЕННЯ ЗАМОВЛЕННЯ</h2>
+<form class="form" onsubmit="submitOrder(event)">
+<div class="field"><label>Ім'я та прізвище *</label><input required name="name" placeholder="Ваше ім'я"></div>
+<div class="field"><label>Телефон *</label><input required name="phone" placeholder="+380 __ ___ __ __"></div>
+<div class="field"><label>Email</label><input type="email" name="email" placeholder="example@gmail.com"></div>
+<div class="field"><label>Спосіб отримання *</label><select name="delivery"><option>Нова пошта — відділення</option><option>Нова пошта — поштомат</option><option>Нова пошта — кур'єр</option></select></div>
+<div class="field"><label>Місто *</label><select required name="city"><option value="">Оберіть місто</option><option>Умань</option><option>Київ</option><option>Львів</option><option>Одеса</option><option>Дніпро</option><option>Вінниця</option><option>Черкаси</option></select></div>
+<div class="field"><label>Відділення / поштомат *</label><select required name="branch"><option value="">Оберіть відділення або поштомат</option><option>Відділення №1</option><option>Відділення №2</option><option>Відділення №5</option><option>Поштомат №12345</option></select></div>
+<div class="field"><label>Спосіб оплати *</label><select required name="payment"><option>Онлайн-оплата карткою</option><option>Післяплата Новою поштою</option><option>Безготівковий розрахунок</option></select></div>
+<div class="field"><label>Коментар</label><input name="comment" placeholder="Наприклад: зателефонуйте перед відправкою"></div>
+<div class="field full"><label>Ваше замовлення</label><textarea id="orderText" rows="4" readonly placeholder="Додайте товар кнопкою «ДЕТАЛЬНІШЕ»"></textarea></div>
+<button class="submit" type="submit">ПІДТВЕРДИТИ ЗАМОВЛЕННЯ</button></form></div></section>
+
+<section id="reviews" class="about"><div class="wrap"><div><h2>Відгуки</h2><p>«Дуже красива ялинка, виглядає натурально. Все акуратно запаковано та швидко відправили.»</p></div><div class="feature"><h3>FORESTERRA</h3><p>Свято у кожній деталі.</p></div></div></section>
+</main>
+
+<footer id="contacts" class="footer"><div class="wrap"><div>FORESTERRA · Преміальні штучні ялинки</div><div>+38 (099) 123 45 67 · Україна</div><div>© 2026 FORESTERRA</div></div></footer>
+
+<div class="modal" id="modal"><div class="modalbox"><button class="close" onclick="closeCart()">×</button><h3>Ваше замовлення</h3><p id="cartText">Кошик порожній.</p><a href="#delivery" class="gold-btn" onclick="closeCart()">ПЕРЕЙТИ ДО ОФОРМЛЕННЯ</a></div></div>
+<script>
+let cart=JSON.parse(localStorage.getItem('foresterra_cart')||'[]');
+function saveCart(){localStorage.setItem('foresterra_cart',JSON.stringify(cart));}
+function add(name,price){cart.push({name,price});saveCart();document.getElementById('count').textContent=cart.length;render();}
+function render(){document.getElementById('orderText').value=cart.length?cart.map((x,i)=>`${i+1}. ${x.name} — ${x.price!=null?x.price.toLocaleString('uk-UA')+' ₴':'ціна за запитом'}`).join('\n'):'Додайте товар кнопкою «ДЕТАЛЬНІШЕ»';document.getElementById('cartText').textContent=cart.length?cart.map(x=>`${x.name} — ${x.price!=null?x.price.toLocaleString('uk-UA')+' ₴':'ціна за запитом'}`).join(' | '):'Кошик порожній.';document.getElementById('count').textContent=cart.length;}
+function openCart(){render();document.getElementById('modal').classList.add('show')}
+function closeCart(){document.getElementById('modal').classList.remove('show')}
+function submitOrder(e){e.preventDefault();alert('Дякуємо! Замовлення сформовано. Для реальної відправки потрібне підключення API Нової пошти та сервера магазину.');cart=[];saveCart();render();}
+render();
+</script>
+</body>
+</html>

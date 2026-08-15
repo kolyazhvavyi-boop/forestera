@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Каталог — FORESTERRA</title>
+<style>
+:root{
+  --bg:#080203; --panel:#210709; --panel2:#2b0a0d; --line:#5b2524;
+  --gold:#c9a15b; --gold2:#e0c27d; --text:#f2e8d7; --muted:#b8a99b;
+  --green:#183b25; --cream:#f4ecdf;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 50% 0,#1c0609 0,#080203 48%,#050102 100%);color:var(--text);font-family:Arial,Helvetica,sans-serif}
+a{text-decoration:none;color:inherit} button,input,select,textarea{font:inherit}
+.header{height:82px;border-bottom:1px solid #301014;background:#080203;display:flex;align-items:center;padding:0 5.8%;gap:45px;position:sticky;top:0;z-index:50}
+.brand{display:flex;align-items:center;gap:13px;min-width:260px}.brand-mark{font-size:34px;color:var(--gold);line-height:1}
+.brand-name{font-family:Georgia,serif;font-size:22px;letter-spacing:2px}.brand-sub{font-size:9px;color:#a9957d;letter-spacing:1.7px;margin-top:3px}
+.nav{display:flex;gap:34px;align-items:center;flex:1;justify-content:center}.nav a{font-size:13px;color:#d0c4b8;letter-spacing:.2px}.nav a:hover,.nav a.active{color:var(--gold2)}
+.actions{display:flex;align-items:center;gap:20px}.phone{font-size:13px;color:#d8c7b3}.icon{font-size:26px;color:var(--gold);cursor:pointer}.cart{position:relative}.count{position:absolute;right:-9px;top:-8px;background:var(--gold);color:#170708;border-radius:50%;width:18px;height:18px;text-align:center;font-size:11px;line-height:18px;font-weight:bold}
+.wrap{width:min(1130px,calc(100% - 48px));margin:auto}
+.pagehead{padding:38px 0 8px}.pagehead h1{font:30px Georgia,serif;color:#e5c98f;letter-spacing:1px;margin:0 0 6px}.crumb{font-size:12px;color:#8f8177}.crumb a{color:#c3ac86}.crumb a:hover{color:var(--gold2)}
+.tabs{display:flex;flex-wrap:wrap;gap:10px;padding:22px 0 30px}
+.tab{border:1px solid #482023;color:#c3ac86;padding:10px 16px;font-size:12px;border-radius:20px;background:#160507;cursor:pointer;white-space:nowrap}
+.tab.active{background:#3a1610;border-color:#c49c58;color:#f0dcae}
+.count-note{font-size:12px;color:#8f8177;padding-bottom:18px}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;padding-bottom:50px}
+.product{background:linear-gradient(180deg,#1b0608,#170507);border:1px solid #472023;border-radius:5px;overflow:hidden;position:relative;min-width:0}
+.pic{height:235px;background:#160708;overflow:hidden;position:relative}.pic img{width:100%;height:100%;object-fit:cover}
+.badge{display:inline-block;background:#21070a;border:1px solid #6b352d;color:#d4b477;padding:5px 9px;font-size:10px;border-radius:3px}
+.pic .badge{position:absolute;left:0;top:0;border-radius:0 0 4px 0}
+.info{padding:18px 16px 16px}.info h3{font:18px Georgia,serif;margin:0 0 4px;color:#f0e5d8}
+.info>.badge{margin-bottom:10px}
+.spec{font-size:11px;color:#9f9188;margin:9px 0}.spec b{color:#eee4da;font-size:13px;font-weight:400}
+.from-price{font:22px Georgia,serif;color:#e5c98f;margin:10px 0}
+.sizes{margin:12px 0}.sizes summary{cursor:pointer;font-size:11px;color:#c3ac86;text-transform:uppercase;letter-spacing:.3px}.sizes summary:hover{color:var(--gold2)}
+.size-row{display:flex;justify-content:space-between;font-size:12px;color:#c9beb3;padding:6px 0;border-bottom:1px solid #351417}.size-row:last-child{border-bottom:0}.size-row b{color:#f0e5d8;font-weight:400}
+.details{border:1px solid #6c392e;background:#2b0b0d;color:#d2b16d;padding:9px 12px;font-size:10px;border-radius:4px;text-transform:uppercase;cursor:pointer;width:100%;margin-top:12px}
+.empty{padding:60px 0;text-align:center;color:#a89485;font-size:13px}
+.footer{border-top:1px solid #321316;padding:35px 0;color:#968b83;font-size:11px}.footer .wrap{display:flex;justify-content:space-between;gap:20px}
+.modal{position:fixed;inset:0;background:#000b;display:none;align-items:center;justify-content:center;z-index:100}.modal.show{display:flex}.modalbox{width:min(560px,92vw);background:#1b0608;border:1px solid #70402b;padding:25px;border-radius:7px;box-shadow:0 20px 70px #000}.modalbox h3{font:23px Georgia,serif;color:#e3c98c;margin:0 0 18px}.close{float:right;background:none;border:0;color:#c9a15b;font-size:24px;cursor:pointer}
+.gold-btn{display:inline-block;border:1px solid #806033;background:#290a0d;color:#d9bc7f;padding:12px 17px;border-radius:4px;font-size:11px;text-transform:uppercase;margin-top:15px}
+@media(max-width:900px){.header{padding:0 20px;gap:12px}.nav{gap:14px}.phone{display:none}.brand{min-width:auto}.products{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.header{height:68px}.brand-name{font-size:17px}.brand-mark{font-size:26px}.nav{display:none}.wrap{width:calc(100% - 24px)}.products{grid-template-columns:1fr 1fr;gap:8px}.pic{height:165px}.info{padding:9px}.info h3{font-size:15px}.pagehead h1{font-size:22px}.footer .wrap{flex-direction:column}}
+</style>
+</head>
+<body>
+<header class="header">
+  <a class="brand" href="index.html"><div class="brand-mark">♧</div><div><div class="brand-name">FORESTERRA</div><div class="brand-sub">ПРЕМІУМ ЯЛИНКИ</div></div></a>
+  <nav class="nav"><a href="catalog.html" class="active">КАТАЛОГ</a><a href="index.html#about">ПРО НАС</a><a href="index.html#delivery">ДОСТАВКА І ОПЛАТА</a><a href="index.html#reviews">ВІДГУКИ</a><a href="index.html#contacts">КОНТАКТИ</a></nav>
+  <div class="actions"><span class="phone">+38 (099) 123 45 67</span><span class="icon">♡</span><span class="icon">♙</span><span class="icon cart" onclick="openCart()">🛒<span class="count" id="count">0</span></span></div>
+</header>
+
+<main>
+<section class="wrap pagehead">
+  <div class="crumb"><a href="index.html">Головна</a> / Каталог</div>
+  <h1>Каталог</h1>
+</section>
+
+<section class="wrap">
+  <div class="tabs" id="tabs"></div>
+  <div class="count-note" id="countNote"></div>
+  <div class="products" id="grid"></div>
+  <div class="empty" id="empty" style="display:none">У цій категорії поки немає товарів.</div>
+</section>
+</main>
+
+<footer class="footer"><div class="wrap"><div>FORESTERRA · Преміальні штучні ялинки</div><div>+38 (099) 123 45 67 · Україна</div><div>© 2026 FORESTERRA</div></div></footer>
+
+<div class="modal" id="modal"><div class="modalbox"><button class="close" onclick="closeCart()">×</button><h3>Ваше замовлення</h3><p id="cartText">Кошик порожній.</p><a href="index.html#delivery" class="gold-btn" onclick="closeCart()">ПЕРЕЙТИ ДО ОФОРМЛЕННЯ</a></div></div>
+
+<script>
+const CATEGORIES=[
+  {slug:'all',name:'Усі товари'},
+  {slug:'yalynky',name:'Штучні ялинки'},
+  {slug:'hirlyandy',name:'Гірлянди'},
+  {slug:'v-horshchyku',name:'Ялинки в горщику'},
+  {slug:'pidvisni',name:'Підвісні ялинки'},
+  {slug:'vinochky',name:'Віночки'},
+  {slug:'nastinni',name:'Настінні ялинки'},
+  {slug:'ikebany',name:'Ікебани'},
+  {slug:'mini',name:'Міні-ялинки'}
+];
+
+const PRODUCTS=[
+  {name:'Українська',cat:'yalynky',img:'assets/products/ukrainska.jpg',badge:'ЕКОНОМ',sizes:[
+    {h:'1.5м',price:4800},{h:'1.8м',price:6800},{h:'2.1м',price:9000},{h:'2.3м',price:11100},
+    {h:'2.5м',price:14000},{h:'2.8м',price:18500},{h:'3м',price:24000},{h:'3.5м',price:34000},{h:'4м',price:45000}
+  ]},
+  {name:'Сільвія преміум',cat:'yalynky',img:'assets/products/silviya-premium.jpg',sizes:[
+    {h:'уточнюється',price:null}
+  ]},
+  {name:'Грандія широка',cat:'yalynky',img:'assets/products/grandiya-shyroka.jpg',sizes:[
+    {h:'1.5м',price:7000},{h:'1.8м',price:11000},{h:'2.2м',price:16100},{h:'2.4м',price:22000},{h:'2.6м',price:27000},{h:'2.8м',price:32200}
+  ]},
+  {name:'Нобіліс супер слім',cat:'yalynky',img:'assets/products/nobilis-super-slim.jpg',badge:'ЕКОНОМ',sizes:[
+    {h:'1.5м',price:3600},{h:'1.8м',price:5000},{h:'2.1м',price:6500},{h:'2.2м',price:7200},
+    {h:'2.3м',price:9000},{h:'2.4м',price:10000},{h:'2.5м',price:11000}
+  ]},
+  {name:'Леді Вайт',cat:'yalynky',img:'assets/products/ledi-vait.jpg',sizes:[
+    {h:'1.5м',price:5500},{h:'1.8м',price:7500},{h:'2.2м',price:10000},{h:'2.3м',price:12200},{h:'2.5м',price:16100},
+    {h:'2.6м',price:21000},{h:'2.8м',price:28800},{h:'3.0м',price:40000},{h:'3.5м',price:52500}
+  ]},
+  {name:'Ламелія мікс',cat:'yalynky',img:'assets/products/lameliya-mix.jpg',badge:'ЕКОНОМ ЛАМЕЛІЇ',sizes:[
+    {h:'1.5м',price:5000},{h:'1.8м',price:6900},{h:'2.2м',price:9800},{h:'2.4м',price:15600},{h:'2.6м',price:20500}
+  ]},
+  {name:'Ламелія',cat:'yalynky',img:'assets/products/lameliya.jpg',sizes:[
+    {h:'1.5м',price:8400},{h:'1.8м',price:10900},{h:'2.2м',price:19500},{h:'2.4м',price:23100}
+  ]},
+  {name:'Рів\u2019єра Альпійська',cat:'yalynky',img:'assets/products/riviera-alpiyska.jpg',sizes:[
+    {h:'1.5м',price:8000},{h:'1.8м',price:10000},{h:'2.2м',price:21500},{h:'2.4м',price:28500}
+  ]},
+  {name:'Карпатська преміум',cat:'yalynky',img:'assets/products/karpatska-premium.jpg',sizes:[
+    {h:'1.8м',price:8100},{h:'2.2м',price:13000},{h:'2.4м',price:17000},{h:'2.6м',price:21500}
+  ]},
+  {name:'Весняна преміум',cat:'yalynky',img:'assets/products/vesnyana-premium.jpg',badge:'ПІД ЗАМОВЛЕННЯ',sizes:[
+    {h:'1.5м',price:5500},{h:'1.8м',price:9000},{h:'2.2м',price:12000},{h:'2.4м',price:15500},{h:'2.6м',price:19000}
+  ]},
+  {name:'Белісіма',cat:'yalynky',img:'assets/products/belisima.jpg',sizes:[
+    {h:'1.5м',price:7800},{h:'1.8м',price:12000},{h:'2.2м',price:20500},{h:'2.4м',price:25500},{h:'2.7м',price:29500}
+  ]},
+  {name:'Рів\u2019єра Альпійська мікс',cat:'yalynky',img:'assets/products/riviera-alpiyska-mix.jpg',badge:'ЕКОНОМ РІВ\u2019ЄРИ',sizes:[
+    {h:'1.5м',price:6000},{h:'1.8м',price:8700},{h:'2.2м',price:13900},{h:'2.4м',price:16600},{h:'2.6м',price:20000}
+  ]},
+  {name:'Ялинки в горщиках',cat:'v-horshchyku',img:'assets/products/yalynky-v-horshchykah.jpg',sizes:[
+    {h:'уточнюється',price:null}
+  ]}
+];
+
+function getParam(k){return new URLSearchParams(location.search).get(k);}
+let active=getParam('cat')||'all';
+if(!CATEGORIES.some(c=>c.slug===active))active='all';
+
+function buildTabs(){
+  const el=document.getElementById('tabs');
+  el.innerHTML=CATEGORIES.map(c=>`<button class="tab${c.slug===active?' active':''}" data-slug="${c.slug}">${c.name}</button>`).join('');
+  el.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{
+    active=btn.dataset.slug;
+    const url=new URL(location);
+    if(active==='all')url.searchParams.delete('cat');else url.searchParams.set('cat',active);
+    history.replaceState({},'',url);
+    buildTabs();
+    renderGrid();
+  }));
+}
+
+function renderGrid(){
+  const list=active==='all'?PRODUCTS:PRODUCTS.filter(p=>p.cat===active);
+  const grid=document.getElementById('grid');
+  const empty=document.getElementById('empty');
+  document.getElementById('countNote').textContent=`Знайдено товарів: ${list.length}`;
+  if(!list.length){grid.innerHTML='';empty.style.display='block';return;}
+  empty.style.display='none';
+  grid.innerHTML=list.map(p=>{
+    const priced=p.sizes.filter(s=>s.price!=null);
+    const fromPrice=priced.length?Math.min(...priced.map(s=>s.price)):null;
+    const heightRange=p.sizes.length>1?`${p.sizes[0].h} – ${p.sizes[p.sizes.length-1].h}`:p.sizes[0].h;
+    return `
+    <article class="product">
+      <div class="pic"><img src="${p.img}" alt="${p.name}">${p.badge?`<span class="badge">${p.badge}</span>`:''}</div>
+      <div class="info">
+        <h3>${p.name}</h3>
+        <div class="spec">♙ Розміри<br><b>${heightRange}</b></div>
+        <div class="from-price">${fromPrice!=null?'від '+fromPrice.toLocaleString('uk-UA')+' ₴':'Ціна за запитом'}</div>
+        <details class="sizes"><summary>Усі розміри та ціни</summary>
+          ${p.sizes.map(s=>`<div class="size-row"><span>${s.h}</span><b>${s.price!=null?s.price.toLocaleString('uk-UA')+' ₴':'уточнюється'}</b></div>`).join('')}
+        </details>
+        <button class="details" onclick="add('${p.name.replace(/'/g,"\\'")}',${fromPrice!=null?fromPrice:'null'})">${fromPrice!=null?'ЗАМОВИТИ':'ЗАПИТАТИ ЦІНУ'}</button>
+      </div>
+    </article>`;
+  }).join('');
+}
+
+// Спільний кошик з index.html через localStorage
+let cart=JSON.parse(localStorage.getItem('foresterra_cart')||'[]');
+function saveCart(){localStorage.setItem('foresterra_cart',JSON.stringify(cart));}
+function add(name,price){cart.push({name,price});saveCart();renderCart();}
+function renderCart(){
+  document.getElementById('count').textContent=cart.length;
+  document.getElementById('cartText').textContent=cart.length?cart.map(x=>`${x.name} — ${x.price!=null?x.price.toLocaleString('uk-UA')+' ₴':'ціна за запитом'}`).join(' | '):'Кошик порожній.';
+}
+function openCart(){renderCart();document.getElementById('modal').classList.add('show')}
+function closeCart(){document.getElementById('modal').classList.remove('show')}
+
+buildTabs();
+renderGrid();
+renderCart();
+</script>
+</body>
+</html>
